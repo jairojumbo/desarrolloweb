@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 2 Mejorado</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+    input[type="text"] {
+      width: 80%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    button {
+      padding: 10px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #218838;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    li {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+      background-color: #e9ecef;
+      margin-bottom: 8px;
+      border-radius: 4px;
+    }
+    .remover {
+      background-color: #dc3545;
+      color: white;
+      border: none;
+      padding: 5px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .remover:hover {
+      background-color: #c82333;
+    }
+    .error {
+      color: red;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Lista de Tareas</h2>
+    <input type="text" id="tarea" placeholder="Nueva tarea" aria-label="Nueva tarea">
+    <button id="añadirTarea">Añadir Tarea</button>
+    <ul id="listaTareas"></ul>
+    <div id="errorMessage" class="error"></div>
+  </div>
+
+  <script>
+    $("#añadirTarea").click(function() {
+      var tarea = $("#tarea").val().trim();
+      if (tarea !== "") {
+        $("#listaTareas").append(
+          "<li>" + tarea + "<button class='remover'>Remover</button></li>"
+        );
+        $("#tarea").val(""); // Limpiar el campo de entrada
+        $("#errorMessage").text(""); // Limpiar el mensaje de error
+      } else {
+        $("#errorMessage").text("¡Por favor, ingresa una tarea!");
+      }
+    });
+
+    $("#listaTareas").on("click", ".remover", function() {
+      $(this).parent().remove();
+    });
+  </script>
+</body>
+</html>
