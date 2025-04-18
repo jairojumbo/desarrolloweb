@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejemplo de Eventos en JavaScript</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .contenedor {
+      padding: 50px;
+      border: 2px solid #ccc;
+      width: 300px;
+      margin: 100px auto;
+      text-align: center;
+    }
+    .boton {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+    .boton:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="contenedor">
+    <button class="boton" id="boton">Haz clic en mí</button>
+  </div>
+
+  <script>
+    // Obtención del botón
+    var boton = document.getElementById('boton');
+
+    // Detener la propagación de eventos
+    boton.addEventListener('click', function(event) {
+      alert('¡Clic en el botón!');
+      event.stopPropagation(); // Detiene la propagación del evento
+    });
+
+    // Manejador de evento en un elemento padre
+    document.body.addEventListener('click', function() {
+      alert('¡Clic en el cuerpo del documento!');
+    });
+  </script>
+
+</body>
+</html>
