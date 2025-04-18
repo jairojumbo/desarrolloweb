@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .login-container {
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            text-align: center; /* Center the content inside the container */
+        }
+        h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        input {
+            width: 90%;  /* Full width */   
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            width: 50%;  /* Full width */
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .error {
+            color: red;
+            font-size: 12px;
+        }
+        .welcome-message {
+            font-size: 18px;
+            color: green;
+            display: none;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<div class="login-container" id="loginContainer">
+    <h2 id="txtsesion">Iniciar sesión</h2>
+    <form id="loginForm">
+        <input type="text" id="username" placeholder="Nombre de usuario" required>
+        <input type="password" id="password" placeholder="Contraseña" required>
+        <button type="submit">Entrar</button>
+        <p class="error" id="errorMessage" style="display:none;">Usuario o contraseña incorrectos</p>
+    </form>
+    <p class="welcome-message" id="welcomeMessage"></p>
+    <button id="btncerrar" type="submit" style="display: none;">Cerrar Sesión</button>
+</div>
+
+<script>
+    // Datos ficticios de usuario y contraseña
+    const correctUsername = 'admin';
+    const correctPassword = '12345';
+
+    // Evento para el formulario de inicio de sesión
+    $('#loginForm').on('submit', function(event) {
+        event.preventDefault(); // Prevenir el comportamiento predeterminado del formulario
+
+        const username = $('#username').val();
+        const password = $('#password').val();
+
+        // Validación de credenciales
+        if (username === correctUsername && password === correctPassword) {
+            // Ocultar el inicio de sesión
+            $('#txtsesion').hide();
+            $('#loginForm').hide();
+            // Mostrar boton cerrar
+            $('#btncerrar').show();
+
+            // Mostrar mensaje de bienvenida
+            $('#welcomeMessage').text(`Bienvenido, ${username}!`).show();
+            $('#errorMessage').hide();
+        } else {
+            // Mostrar mensaje de error
+            $('#errorMessage').show();
+            $('#welcomeMessage').hide();
+        }
+
+        // Limpiar los campos
+        $('#username').val('');
+        $('#password').val('');
+    });
+
+    // Ejemplo de manipulación del DOM para cambiar el color de fondo al hacer clic
+    $('#welcomeMessage').on('click', function() {
+        $('body').css('background-color', '#e0f7fa'); // Cambiar color de fondo
+    });
+
+    $('#btncerrar').on('click', function() {
+        // Mostrar el inicio de sesión
+        $('#txtsesion').show();
+        $('#loginForm').show();
+
+        // Ocultar boton cerrar
+        $('#btncerrar').hide();
+        $('#welcomeMessage').hide();
+    });
+</script>
+
+</body>
+</html>
