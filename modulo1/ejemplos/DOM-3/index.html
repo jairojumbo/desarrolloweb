@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de Eventos</title>
+</head>
+<body>
+
+    <div id="container">
+        <button id="myButton">Haz clic aquí</button>
+    </div>
+
+    <script>
+        // Fase de captura
+        document.getElementById("container").addEventListener("click", function(event) {
+            console.log("Captura - Contenedor");
+        }, true); // true para captura
+
+        // Fase de objetivo
+        document.getElementById("myButton").addEventListener("click", function(event) {
+            console.log("Objetivo - Botón");
+        });
+
+        // Fase de burbuja
+        document.getElementById("container").addEventListener("click", function(event) {
+            console.log("Burbuja - Contenedor");
+        }, false); // false para burbuja
+        
+    </script>
+
+</body>
+</html>
