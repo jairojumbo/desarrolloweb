@@ -87,7 +87,7 @@
     const correctPassword = '12345';
 
     // Evento para el formulario de inicio de sesión
-    loginForm.addEventListener('submit', function(event) {
+    loginForm.addEventListener('submit', (event) => {
         event.preventDefault(); // Prevenir el comportamiento predeterminado del formulario
 
         const username = usernameInput.value;
@@ -104,6 +104,7 @@
             // Mostrar mensaje de bienvenida
             welcomeMessage.textContent = `Bienvenido, ${username}!`;
             welcomeMessage.style.display = 'block';
+
             errorMessage.style.display = 'none';
         } else {
             // Mostrar mensaje de error
@@ -117,10 +118,10 @@
     });
 
     // Ejemplo de manipulación del DOM para cambiar el color de fondo al hacer clic
-    welcomeMessage.addEventListener('click', function() {
-        document.body.style.backgroundColor = '#e0f7fa'; // Cambiar color de fondo
+    welcomeMessage.addEventListener('click', () => {
+        document.body.style.backgroundColor = '#0000FF'; // Cambiar color de fondo
     });
-    btncerrar.addEventListener('click', function() {
+    btncerrar.addEventListener('click', () => {
        // Mostrar el inicio de sesión
        txtsesion.style.display = 'inline';
        loginForm.style.display = 'inline';

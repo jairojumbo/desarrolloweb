@@ -17,7 +17,7 @@ button.addEventListener('click', function() {
 // Mostrar la lista de nombres
 const showNamesButton = document.getElementById('show-names');
 const nameList = document.getElementById('name-list');
-const names = ['Juan', 'Maria', 'Carlos', 'Ana', 'Luis'];
+const names = ['Juan', 'Maria', 'Carlos', 'Ana', 'Luis', 'Jairo', 'Andres'];
 
 showNamesButton.addEventListener('click', function() {
     // Limpiar la lista antes de agregar los nuevos nombres

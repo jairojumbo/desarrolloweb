@@ -5,16 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ejemplo con jQuery</title>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    #caja{
+      width:200px;
+      height:200px;
+      background-color:rgb(23, 180, 170);
+    }
+  </style>
 </head>
 <body>
   <button id="alternarVisibilidad">Alternar Visibilidad</button>
-  <div id="caja" style="width:100px;height:100px;background-color:red;"></div>
+  <div id="caja"></div>
 
   <script>
+
     // Usamos jQuery para alternar la visibilidad del div
     $("#alternarVisibilidad").click(function() {
       $("#caja").toggle();
     });
+    
   </script>
 </body>
 </html>
