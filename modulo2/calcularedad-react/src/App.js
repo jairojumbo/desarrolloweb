@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { DatePicker, Button, Input, Form, message } from 'antd';  // Importar componentes de Ant Design
 
 function App() {
@@ -8,11 +8,20 @@ function App() {
 
   const handleChange = (event) => {
     setNombre(event.target.value);
+    console.log(event.target.value);  
   };
 
   const handleDateChange = (date, dateString) => {
     setFechaNacimiento(dateString);
+    console.log(dateString);  
   };
+
+  useEffect( () => {
+    if(fechaNacimiento){
+      const edadCalculada = calcularEdad(fechaNacimiento);
+      setEdad(edadCalculada);
+    }
+  }, [fechaNacimiento]);
 
   const calcularEdad = (fechaNacimiento) => {
     const nacimiento = new Date(fechaNacimiento);

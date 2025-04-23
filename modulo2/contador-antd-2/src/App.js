@@ -26,7 +26,7 @@ function App() {
         style={{ marginRight: '10px' }}>Incrementar</Button>
       <Button type='primary' onClick={decrementar} style={{ marginRight: '10px' }}>Decrementar</Button>
 
-      <Button type='primary' onClick={handleClick}> Presiona Aquí </Button>
+      <Button type='primary' onClick={handleClick} > Presiona Aquí </Button>
     </div>
   );
 }
