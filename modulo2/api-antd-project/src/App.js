@@ -35,7 +35,9 @@ class App extends Component {
 
   // Función para obtener los datos de la API
   fetchData = () => {
+
     this.setState({ loading: true });
+
     fetch(this.apiUrl)
       .then(response => response.json())
       .then(data => {
@@ -51,7 +53,7 @@ class App extends Component {
     const { data, loading } = this.state;
 
     const paginationConfig = {
-      pageSize: 3,  // Establecer el número de elementos por página
+      pageSize: 5,  // Establecer el número de elementos por página
       total: data.length,  // Establecer el número total de elementos (por ejemplo, la longitud de los datos)
     };
 
