@@ -1,16 +1,41 @@
-// App.jsx
-import React from 'react';
-import LazyImage from './LazyImage';
+import React, { Suspense } from 'react';
+
+// Cargar LazyImage de manera diferida
+const LazyImage = React.lazy(() => import('./LazyImage'));
 
 const App = () => {
-  return (
-    <div style={{ padding: '2rem' }}>
-      <p>Haz scroll hacia abajo para cargar las imágenes...</p>
-      <div style={{ height: '1000px' }}></div>
+  const imageUrls = [
+    './paisaje.jpg',
+    './paisaje.jpg',
+    './paisaje.jpg',
+    './paisaje.jpg',
+    './paisaje.jpg',
+    './paisaje.jpg',
+    './paisaje.jpg',
+    './paisaje.jpg',
+    './paisaje.jpg',
+    './paisaje.jpg',
+    './paisaje.jpg',
+  ];
 
-      <LazyImage src="https://via.placeholder.com/400x300?text=Imagen+1" alt="Imagen 1" />
-      <LazyImage src="https://via.placeholder.com/400x300?text=Imagen+2" alt="Imagen 2" />
-      <LazyImage src="https://via.placeholder.com/400x300?text=Imagen+3" alt="Imagen 3" />
+  return (
+    <div style={{ padding: '20px', height: '200vh' }}>
+      <h1>Cargar las imágenes...</h1>
+
+      {/* React Suspense para manejar el estado de carga de los componentes perezosos */}S
+      <Suspense fallback={<div>Cargando...</div>}>
+        {imageUrls.map((src, index) =>
+          React.createElement(
+            'div',
+            { key: index, style: { marginBottom: '20px' } },
+            React.createElement(LazyImage, {
+              src: src,
+              alt: 'Imagen ' + (index + 1),
+              style: { width: '50%', height: 'auto' },
+            })
+          )
+        )}
+      </Suspense>
     </div>
   );
 };
