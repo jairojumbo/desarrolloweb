@@ -1,0 +1,34 @@
+/* index.css */
+
+/* Fondo del layout */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Estilo del header */
+  .ant-layout-header {
+    background-color: #1890ff;
+    font-size: 24px;
+  }
+  
+  /* Estilo del contenido */
+  .ant-layout-content {
+    background-color: white;
+    padding: 20px;
+  }
+  
+  .ant-card {
+    border-radius: 10px;
+  }
+  
+  .ant-card-title {
+    font-size: 18px;
+  }
+  
+  .ant-row {
+    margin-top: 30px;
+  }
+  

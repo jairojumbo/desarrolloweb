@@ -31,24 +31,26 @@ function App() {
           }}
       >
 
-          <Layout style={{ height: '100vh' }}>
+          <Layout style={{ height: '100vh', padding: 20, 
+            background: isDarkMode ? '#000' : '#FFF' }}>
 
             <Header style={{
                     textAlign: 'center',
-                    background: isDarkMode ? '#141414' : '#FFF',
+                    background: isDarkMode ? '#000' : '#FFF',
                     color: isDarkMode ? '#FFF' : '#000',
                     padding: '1rem 0',
+                    marginBottom: 10
                 }}>
               <h2>Formulario de Datos</h2>
             </Header>
             <Content style={{
-                  background:  isDarkMode ? '#141414' : '#FFF',
+                  background:  isDarkMode ? '#000' : '#FFF',
                 }}>
                 <LightModeOutlinedIcon fontSize='small'/>
                 <Switch checked={isDarkMode} onChange={toggleTheme}/>
                 <DarkModeOutlinedIcon fontSize='small'/>
 
-                <Button type='primary' onClick={toggleTheme}>
+                <Button type='primary' style={{marginBottom: 20, marginLeft: 20}} onClick={toggleTheme}>
                   Cambiar a tema { isDarkMode ? 'claro' : 'oscuro' }
                 </Button>
 
