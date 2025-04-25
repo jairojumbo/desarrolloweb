@@ -56,7 +56,7 @@ function App() {
   };
 
   return (
-    <div style={{ padding: '50px' }}>
+    <div style={{ padding: '20px', margin: '0px' }}>
       <Form onSubmitCapture={handleSubmit} layout="vertical">
         <Form.Item label="Nombre" required>
           <Input 
