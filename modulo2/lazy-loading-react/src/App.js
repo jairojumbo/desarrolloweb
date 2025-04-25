@@ -22,7 +22,7 @@ const App = () => {
     <div style={{ padding: '20px', height: '200vh' }}>
       <h1>Cargar las imágenes...</h1>
 
-      {/* React Suspense para manejar el estado de carga de los componentes perezosos */}S
+      {/* React Suspense para manejar el estado de carga de los componentes perezosos */}
       <Suspense fallback={<div>Cargando...</div>}>
         {imageUrls.map((src, index) =>
           React.createElement(
