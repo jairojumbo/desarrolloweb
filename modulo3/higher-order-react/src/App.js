@@ -16,7 +16,13 @@ function App() {
       </Header>
       <Content style={{ padding: '20px', display: 'flex', justifyContent: 'center' }}>
         <div>
-          <UserProfileWithLogging name="Juan Pérez" age={30} />
+          <UserProfileWithLogging name="Juan Pérez 1" age={30} />
+          <UserProfileWithLogging name="Juan Pérez 2" age={25} />
+          <UserProfileWithLogging name="Juan Pérez 3" age={20} />
+          <UserProfileWithLogging name="Juan Pérez 4" age={15} />
+          <UserProfileWithLogging name="Juan Pérez 5" age={18} />
+          <UserProfileWithLogging name="Juan Pérez 6" age={24} />
+          <UserProfileWithLogging name="Juan Pérez 7" age={22} />
         </div>
       </Content>
     </Layout>

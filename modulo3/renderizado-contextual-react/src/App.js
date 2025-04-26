@@ -57,7 +57,7 @@ function App() {
         </Header>
 
         <Content style={{ padding: '20px', backgroundColor: currentTheme.background }}>
-          <div style={{ maxWidth: 600, margin: '0 auto', color: currentTheme.color }}>
+          <div style={{ maxWidth: 600, margin: '0 auto' }}>
             <Form>
               <Form.Item
                 label="Nombre"
@@ -104,7 +104,9 @@ function App() {
           </div>
         </Content>
 
-        <Footer style={{ textAlign: 'center', backgroundColor: currentTheme.background }}>
+        <Footer style={{ textAlign: 'center', 
+          backgroundColor: currentTheme.background, 
+          color: currentTheme.formItemLabelColor }}>
           Aplicación con tema {theme}
         </Footer>
       </Layout>

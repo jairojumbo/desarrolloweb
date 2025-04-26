@@ -8,6 +8,7 @@ class MouseTracker extends React.Component {
 
   handleMouseMove = (event) => {
     this.setState({ x: event.clientX, y: event.clientY });
+    console.log("x: ", event.clientX, " y: ", event.clientY);
   };
 
   render() {

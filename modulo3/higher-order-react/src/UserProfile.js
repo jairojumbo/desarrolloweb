@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Typography } from 'antd';
+import { Card, Typography, Avatar  } from 'antd';
 
 // Desestructuramos props
 const { Title, Paragraph } = Typography;
@@ -12,6 +12,7 @@ function UserProfile({ name, age }) {
       hoverable
     >
       <Typography>
+        <Avatar src="./logo192.png" size={128} />
         <Title level={4}>{name}</Title>
         <Paragraph>Edad: {age}</Paragraph>
       </Typography>

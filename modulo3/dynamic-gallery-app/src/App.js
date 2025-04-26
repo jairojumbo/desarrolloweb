@@ -39,6 +39,11 @@ const images = [
   "./image.png",
   "./image.png",
   "./image.png",
+  "./image.png",
+  "./image.png",
+  "./image.png",
+  "./image.png",
+  "./image.png",
 ];
 
 const { Content } = Layout;
