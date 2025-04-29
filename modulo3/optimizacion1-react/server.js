@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const sqlite3 = require('sqlite3').verbose();
+
 const app = express();
 const PORT = 4000;
 
@@ -51,7 +52,7 @@ app.post('/api/login', (req, res) => {
       console.error('Error en la consulta', err);
       res.status(500).json({ message: 'Error en servidor' });
     } else if (row) {
-      res.json({ success: true, user: { id: row.id, email: row.email } });
+      res.json({ success: true, user: { id: row.id, nombre: row.nombre, apellido: row.apellido, email: row.email } });
     } else {
       res.status(401).json({ success: false, message: 'Credenciales incorrectas' });
     }
